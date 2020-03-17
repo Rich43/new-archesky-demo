@@ -1,7 +1,8 @@
 import React from 'react';
+import {Box} from "@material-ui/core";
 
 export function Home() {
-    return <>Hello world</>;
+    return <Box p={2}>Hello world</Box>;
 }
 
 export default Home;
