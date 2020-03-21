@@ -3,13 +3,15 @@ import './App.css';
 import ApolloProvider from 'react-apollo/ApolloProvider';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { client } from "./graphql";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
 import { Navigation } from "./components/nav/Navigation";
 import { KeycloakProvider } from '@react-keycloak/web'
 import keycloak from "./keycloak";
+import { Login } from "./components/Login";
 
 export const HOME = '/';
+export const LOGIN = '/login';
 
 function App() {
     return (
@@ -18,7 +20,10 @@ function App() {
                 <KeycloakProvider keycloak={keycloak}>
                     <BrowserRouter>
                         <Navigation/>
-                        <Route path={HOME} component={Home}/>
+                        <Switch>
+                            <Route path={LOGIN} component={Login}/>
+                            <Route path={HOME} component={Home}/>
+                        </Switch>
                     </BrowserRouter>
                 </KeycloakProvider>
             </ApolloHooksProvider>
