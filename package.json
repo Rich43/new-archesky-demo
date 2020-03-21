@@ -16,6 +16,7 @@
     "@types/react-router-dom": "^4.3.5",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
+    "keycloak-js": "^9.0.0",
     "apollo": "^2.21.2",
     "apollo-boost": "^0.4.7",
     "react": "^16.13.0",
