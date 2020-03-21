@@ -21,6 +21,9 @@ export const Login: FunctionComponent = () => {
             <button type="button" onClick={() => keycloak.login()}>
                 Login
             </button>
+            <pre>
+                { JSON.stringify(keycloak, null, 4) }
+            </pre>
         </div>
     );
 };
