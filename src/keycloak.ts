@@ -6,8 +6,8 @@ import Keycloak from 'keycloak-js';
 // @ts-ignore
 const keycloak = new Keycloak({
     url: 'http://localhost:8180/auth/',
-    realm: 'master',
-    clientId: 'pynguins_demo'
+    realm: 'Archesky',
+    clientId: 'archesky'
 });
 
 export default keycloak
