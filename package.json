@@ -32,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "codegen": "rm -r src/types && apollo client:codegen --target typescript --localSchemaFile=src/schema.json --outputFlat src/types && rm src/types/globalTypes.ts",
+    "download": "rm src/schema.json && apollo schema:download --endpoint http://localhost:8080/graphql src/schema.json"
   },
   "eslintConfig": {
     "extends": "react-app"
