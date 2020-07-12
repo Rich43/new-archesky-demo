@@ -9,6 +9,7 @@ import { Navigation } from "./components/nav/Navigation";
 import { KeycloakProvider } from '@react-keycloak/web'
 import keycloak from "./keycloak";
 import { Login } from "./components/Login";
+import { ConfigureEnvironment } from "./components/ConfigureEnvironment";
 
 export const HOME = '/';
 export const LOGIN = '/login';
@@ -18,6 +19,7 @@ function App() {
         <ApolloProvider client={client}>
             <ApolloHooksProvider client={client}>
                 <KeycloakProvider keycloak={keycloak}>
+                    <ConfigureEnvironment />
                     <BrowserRouter>
                         <Navigation/>
                         <Switch>
