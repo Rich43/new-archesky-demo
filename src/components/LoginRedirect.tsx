@@ -13,10 +13,7 @@ export const LoginRedirect: FunctionComponent = () => {
         window.parent.location.href = USER;
       }
     }, [login, initialized, authenticated])
-    if (!initialized) {
-      return (
-        <div>Loading...</div>
-      );
-    }
-    return (<></>);
+    return (
+      <div>Loading...</div>
+    );
 };
