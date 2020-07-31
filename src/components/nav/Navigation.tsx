@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 export const Navigation: FunctionComponent = () => {
     const classes = useStyles();
     return (
-        <AppBar position='static'>
+        <AppBar position='sticky'>
             <Toolbar>
                 <SideDrawer />
                 <Typography variant='h6' className={classes.title}>Pynguins</Typography>

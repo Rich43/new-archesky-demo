@@ -8,11 +8,15 @@ import Home from "./components/Home";
 import { Navigation } from "./components/nav/Navigation";
 import { KeycloakProvider } from '@react-keycloak/web'
 import keycloak from "./keycloak";
-import { Login } from "./components/Login";
+import { UserPage } from "./components/UserPage";
 import { ConfigureEnvironment } from "./components/ConfigureEnvironment";
+import { LoginRedirect } from './components/LoginRedirect';
+import { Login } from './components/Login';
 
 export const HOME = '/';
+export const USER = '/user';
 export const LOGIN = '/login';
+export const LOGIN_REDIRECT = '/login_redirect';
 
 function App() {
     return (
@@ -23,7 +27,9 @@ function App() {
                     <BrowserRouter>
                         <Navigation/>
                         <Switch>
+                            <Route path={LOGIN_REDIRECT} component={LoginRedirect}/>
                             <Route path={LOGIN} component={Login}/>
+                            <Route path={USER} component={UserPage}/>
                             <Route path={HOME} component={Home}/>
                         </Switch>
                     </BrowserRouter>

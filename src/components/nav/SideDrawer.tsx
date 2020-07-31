@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Close from '@material-ui/icons/Close';
 import Box from '@material-ui/core/Box';
-import { HOME, LOGIN } from '../../App';
+import { HOME, USER, LOGIN } from '../../App';
 import useReactRouter from 'use-react-router';
 
 const useStyles = makeStyles({
@@ -27,6 +27,7 @@ export const SideDrawer: FunctionComponent = () => {
     const classes = useStyles();
     const menu = [
         [HOME, 'Home'],
+        [USER, 'User Area'],
         [LOGIN, 'Login']
     ];
     let count = 0;
