@@ -5,13 +5,12 @@ import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { client } from "./graphql";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
-import { Navigation } from "./components/nav/Navigation";
 import { KeycloakProvider } from '@react-keycloak/web'
 import keycloak from "./keycloak";
 import { UserPage } from "./components/UserPage";
-import { ConfigureEnvironment } from "./components/ConfigureEnvironment";
 import { LoginRedirect } from './components/LoginRedirect';
 import { Login } from './components/Login';
+import { Base } from './components/Base';
 
 export const HOME = '/';
 export const USER = '/user';
@@ -23,14 +22,12 @@ function App() {
         <ApolloProvider client={client}>
             <ApolloHooksProvider client={client}>
                 <KeycloakProvider keycloak={keycloak}>
-                    <ConfigureEnvironment />
                     <BrowserRouter>
-                        <Navigation/>
                         <Switch>
-                            <Route path={LOGIN_REDIRECT} component={LoginRedirect}/>
-                            <Route path={LOGIN} component={Login}/>
-                            <Route path={USER} component={UserPage}/>
-                            <Route path={HOME} component={Home}/>
+                            <Route path={LOGIN_REDIRECT} render={ () => <LoginRedirect /> }/>
+                            <Route path={LOGIN} render={ () => <Base><Login /></Base> }/>
+                            <Route path={USER} render={ () => <Base><UserPage /></Base> }/>
+                            <Route path={HOME} render={ () => <Base><Home /></Base> }/>
                         </Switch>
                     </BrowserRouter>
                 </KeycloakProvider>
