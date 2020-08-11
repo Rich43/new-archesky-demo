@@ -5,7 +5,7 @@ import Keycloak from 'keycloak-js';
 
 // @ts-ignore
 const keycloak = new Keycloak({
-    url: 'http://localhost:8180/auth/',
+    url: '/auth/',
     realm: 'Archesky',
     clientId: 'archesky'
 });
