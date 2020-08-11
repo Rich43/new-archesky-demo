@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { LOGIN_REDIRECT } from '../App';
-import { makeStyles, Theme, Box } from '@material-ui/core';
+import { Box, makeStyles, Theme } from '@material-ui/core';
+import { LOGIN_REDIRECT } from "./RedirectRoute";
 
 const useStyles = makeStyles<Theme, {}>((theme) => {
     return ({

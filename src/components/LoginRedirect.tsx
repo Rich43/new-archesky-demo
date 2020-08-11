@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
-import { USER } from '../App';
+import { USER } from "./BaseRoute";
 
 export const LoginRedirect: FunctionComponent = () => {
     const [keycloak, initialized] = useKeycloak();

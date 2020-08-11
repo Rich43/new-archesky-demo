@@ -8,8 +8,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Close from '@material-ui/icons/Close';
 import Box from '@material-ui/core/Box';
-import { HOME, USER, LOGIN } from '../../App';
 import useReactRouter from 'use-react-router';
+import { HOME, LOGIN, USER } from "../BaseRoute";
 
 const useStyles = makeStyles({
     list: {
