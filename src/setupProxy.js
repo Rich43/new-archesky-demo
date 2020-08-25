@@ -11,7 +11,7 @@ module.exports = function(app) {
         '/auth',
         createProxyMiddleware({
             target: 'http://localhost:8180',
-            changeOrigin: true,
+            changeOrigin: false,
         })
     );
 };
