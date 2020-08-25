@@ -6,7 +6,7 @@ import Keycloak from 'keycloak-js';
 // @ts-ignore
 const keycloak = new Keycloak({
     url: '/auth/',
-    realm: 'Archesky_localhost', // TODO: make this generic
+    realm: 'archesky_localhost', // TODO: make this generic
     clientId: 'archesky'
 });
 
