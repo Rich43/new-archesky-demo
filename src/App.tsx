@@ -13,7 +13,7 @@ function App() {
         <ApolloProvider client={client}>
             <ApolloHooksProvider client={client}>
                 <KeycloakProvider keycloak={keycloak}>
-                    <BrowserRouter>
+                    <BrowserRouter basename="/app">
                         <RouteSwitcher />
                     </BrowserRouter>
                 </KeycloakProvider>
