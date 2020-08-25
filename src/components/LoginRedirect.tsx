@@ -10,7 +10,7 @@ export const LoginRedirect: FunctionComponent = () => {
       if (initialized && !authenticated) {
         login();
       } else if (initialized && authenticated) {
-        window.parent.location.href = USER;
+        window.parent.location.href = `/app/${USER}`;
       }
     }, [login, initialized, authenticated])
     return (
