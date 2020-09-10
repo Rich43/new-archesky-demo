@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import './App.css';
 import ApolloProvider from 'react-apollo/ApolloProvider';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
@@ -10,10 +10,12 @@ import { RouteSwitcher } from "./components/RouteSwitcher";
 
 export const AppInner: FunctionComponent = () => {
     const [keycloak, initialized] = useKeycloak();
-    let token = '';
-    if (initialized && keycloak.token) {
-        token = keycloak.token;
-    }
+    const [token, setToken] = useState('');
+    useEffect(() => {
+        if (initialized && keycloak.token) {
+            setToken(keycloak.token);
+        }
+    }, [initialized, keycloak.token]);
     const gqlClient = client(token);
     return (
         <ApolloProvider client={gqlClient}>
