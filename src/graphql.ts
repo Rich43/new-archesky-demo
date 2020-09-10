@@ -5,7 +5,8 @@ export const client = new ApolloClient({
         const token = window.sessionStorage.getItem('token');
         operation.setContext({
             headers: {
-                Authorization: token ? token : ''
+                Authorization: token ? token : '',
+                Host: window.location.host
             }
         });
     },
