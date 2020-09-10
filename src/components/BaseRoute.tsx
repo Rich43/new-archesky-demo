@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { ConfigureEnvironment } from './ConfigureEnvironment';
 import { Navigation } from './nav/Navigation';
 import { Route, Switch } from "react-router-dom";
 import { Login } from "./Login";
@@ -13,7 +12,6 @@ export const LOGIN = '/login';
 export const BaseRoute: FunctionComponent = ({ children }) => {
     return (
         <>
-            <ConfigureEnvironment />
             <Navigation/>
             <Switch>
                 <Route path={LOGIN} component={Login}/>
