@@ -13,11 +13,11 @@ server {
     }
 
     location /graphql {
-        proxy_pass http://${DEMO_HOST}:8080/graphql;
+        proxy_pass https://${DEMO_HOST}:8443/graphql;
     }
 
     location /subscriptions {
-        proxy_pass http://${DEMO_HOST}:8080/subscriptions;
+        proxy_pass https://${DEMO_HOST}:8443/subscriptions;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
