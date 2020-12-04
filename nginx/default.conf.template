@@ -27,7 +27,7 @@ server {
     }
 
     location /auth {
-        proxy_pass http://${KEYCLOAK_HOST}:8080/graphql;
+        proxy_pass http://${KEYCLOAK_HOST}:8080/auth;
     }
 
     location /graphql {
