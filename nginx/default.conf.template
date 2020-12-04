@@ -26,8 +26,8 @@ server {
         try_files $uri =404;
     }
 
-    location /auth {
-        proxy_pass http://${KEYCLOAK_HOST}:8080/auth;
+    location ~ /auth/.* {
+        proxy_pass http://${KEYCLOAK_HOST}:8080/auth/;
     }
 
     location /graphql {
