@@ -84,4 +84,4 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:0.0.${{ github.run_id }}-SNAPSHOT
       - name: Deploy
         id: deploy
-        run: kubectl apply -f ./demo-server-deployment.yaml ./demo-server-service.yaml
+        run: kubectl apply -f ./demo-server-deployment.yaml -f ./demo-server-service.yaml
