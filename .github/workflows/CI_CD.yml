@@ -82,6 +82,9 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:0.0.${{ github.run_id }}-SNAPSHOT
+      - name: Delete old deployment
+        id: delete_deploy
+        run: kubectl delete -n default deployment demo-server
       - name: Deploy
         id: deploy
-        run: kubectl apply -f ./demo-server-deployment.yaml -f ./demo-server-service.yaml
+        run: kubectl apply -f ./demo-server-deployment.yaml
