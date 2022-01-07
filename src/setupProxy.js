@@ -1,9 +1,9 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function(app) {
     app.use(
-        '/graphql',
+        '/content-api',
         createProxyMiddleware({
-            target: 'https://localhost:8443',
+            target: 'http://localhost:8080',
             changeOrigin: true,
             secure: false
         })

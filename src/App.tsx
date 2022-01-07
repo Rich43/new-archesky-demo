@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import './App.css';
-import ApolloProvider from 'react-apollo/ApolloProvider';
-import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
-import { client } from "./graphql";
 import { BrowserRouter } from 'react-router-dom';
 import { KeycloakProvider, useKeycloak } from '@react-keycloak/web'
 import keycloak from "./keycloak";
@@ -16,15 +13,10 @@ export const AppInner: FunctionComponent = () => {
             setToken(keycloak.token);
         }
     }, [initialized, keycloak.token]);
-    const gqlClient = client(token);
     return (
-        <ApolloProvider client={gqlClient}>
-            <ApolloHooksProvider client={gqlClient}>
-                <BrowserRouter basename="/app">
-                    <RouteSwitcher/>
-                </BrowserRouter>
-            </ApolloHooksProvider>
-        </ApolloProvider>
+        <BrowserRouter basename="/app">
+            <RouteSwitcher/>
+        </BrowserRouter>
     );
 };
 

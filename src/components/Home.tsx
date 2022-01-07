@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField } from "@material-ui/core";
-import { useCreateContentMutation } from "../graphql/createContent";
 
 export function Home() {
     const [content, setContent] = useState('');
-    const [createContent] = useCreateContentMutation();
     const onSubmit = () => {
         console.log(content);
-        createContent(
-            {
-                variables: {content}
-            }
-        ).then();
     };
     return (
         <>
