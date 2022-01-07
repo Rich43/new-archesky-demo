@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { Box, Button, TextField } from "@material-ui/core";
 import useSWR, { useSWRConfig } from 'swr';
 
+const CONTENT_API_URL = '/content-api/content';
+
 export function Home() {
     const [content, setContent] = useState('');
     const fetcher = (url: string) => fetch(url).then(r => r.json());
-    const { data, error } = useSWR('/content-api/content', fetcher);
+    const { data, error } = useSWR(CONTENT_API_URL, fetcher);
     const { mutate } = useSWRConfig();
 
     const onSubmit = () => {
         console.log(content);
-        mutate('/api/user', {
+        mutate(CONTENT_API_URL, {
             "createdBy": "Richard",
             "displayName": content,
             "name": content,
