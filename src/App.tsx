@@ -7,7 +7,7 @@ import { RouteSwitcher } from "./components/RouteSwitcher";
 
 export const AppInner: FunctionComponent = () => {
     const [keycloak, initialized] = useKeycloak();
-    const [token, setToken] = useState('');
+    const [, setToken] = useState('');
     useEffect(() => {
         if (initialized && keycloak.token) {
             setToken(keycloak.token);
